@@ -1,0 +1,35 @@
+{
+  "name": "chrome-user-data-dir",
+  "description": "An easy way to generate custom Chromium / Google Chrome profile (user data directory)",
+  "version": "0.1.0",
+  "author": "Stanley Shyiko <stanley.shyiko@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shyiko/node-chrome-user-data-dir"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/index.spec.js"
+  },
+  "dependencies": {
+    "object-assign": "^3.0.0",
+    "async": "^1.2.1",
+    "crx-parser": "^0.1.1",
+    "chrome-extension-id": "^0.1.0",
+    "tmp": "0.0.26",
+    "streamifier": "^0.1.1",
+    "unzip": "^0.1.11",
+    "concat-stream": "^1.4.8",
+    "once": "^1.3.2"
+  },
+  "devDependencies": {
+    "mock-fs": "^2.7.0"
+  },
+  "keywords": [
+    "chrome",
+    "chromium",
+    "profile",
+    "user-data-dir"
+  ]
+}
