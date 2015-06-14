@@ -22,7 +22,7 @@ module.exports = function (options, cb) {
       if (o.userDataDir) {
         fs.mkdir(o.userDataDir, function (err) {
           if (err && err.code !== 'EEXIST') {
-            return cb(err), undefined;
+            return cb(err);
           }
           cb();
         });
@@ -47,9 +47,9 @@ module.exports = function (options, cb) {
           !o.externalExtensions ? cb() :
             fs.mkdir(path, function (err) {
               if (err && err.code !== 'EEXIST') {
-                return cb(err), undefined;
+                return cb(err);
               }
-              async.all(o.externalExtensions, function (crx, eecb) {
+              async.each(o.externalExtensions, function (crx, eecb) {
                 async.waterfall([
                   fs.readFile.bind(fs, crx),
                   parseCRX,
@@ -57,7 +57,7 @@ module.exports = function (options, cb) {
                     var id = eid(data.header.publicKey);
                     manifest(data.body, function (err, m) {
                       if (err) {
-                        return cb(err), undefined;
+                        return cb(err);
                       }
                       fs.writeFile(path + '/' + id + '.json',
                         JSON.stringify({
@@ -66,7 +66,7 @@ module.exports = function (options, cb) {
                         }), cb);
                     });
                   }
-                ], eecb)
+                ], eecb);
               }, cb);
             });
         }
