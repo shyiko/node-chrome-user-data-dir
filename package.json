@@ -1,7 +1,7 @@
 {
   "name": "chrome-user-data-dir",
   "description": "An easy way to generate custom Chromium / Google Chrome profile (user data directory)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Stanley Shyiko <stanley.shyiko@gmail.com>",
   "license": "MIT",
   "repository": {
